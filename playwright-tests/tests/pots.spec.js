@@ -3,7 +3,7 @@
  */
 
 import { test, expect } from "@playwright/test";
-import { ROOT_SRC, DEFAULT_POT_ID } from "../util/constants";
+import { ROOT_SRC, DEFAULT_POT_ID, DEFAULT_PROJECT_ID } from "../util/constants";
 
 test("clicking pot card should go to pot page", async ({ page }) => {
   await page.goto(`${ROOT_SRC}?tab=pots`);
@@ -67,6 +67,7 @@ test("should show active pots", async ({ page }) => {
 
 test("should show completed pots", async ({ page }) => {
   await page.goto(`${ROOT_SRC}?tab=pots`);
+  console.log(`${ROOT_SRC}?tab=pots`);
 
   const completedPots = page.locator('[data-testid="inactive-pot"]');
 
@@ -78,10 +79,13 @@ test("should show completed pots", async ({ page }) => {
   }
 });
 
-test("should sort pots", async ({ page }) => {
-  // TODO:
+test("should sort pots from most to least in pot", async ({ page }) => {
+
 });
 
 test("should filter pots", async ({ page }) => {
   // TODO:
 });
+
+
+

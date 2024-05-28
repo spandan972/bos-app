@@ -24,3 +24,6 @@ test("clicking project card should go to project page", async ({ page }) => {
 
   expect(projectUrl).toContain("?tab=project&projectId=magicbuild");
 });
+
+
+
